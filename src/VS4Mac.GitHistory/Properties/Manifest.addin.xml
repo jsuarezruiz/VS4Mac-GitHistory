@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Addin
+    id = "MonoDevelop.AssetStudio">
+    <Header>
+        <Name>Git History Addin</Name>
+        <Description>Quickly browse the history of a file from any git repository directly from VS4Mac.</Description>
+        <Author>Javier Suárez Ruiz</Author>
+        <Copyright>Javier Suárez Ruiz</Copyright>
+        <Url>https://github.com/jsuarezruiz/VSMac-GitHistory</Url>
+    </Header>
+    <Extension path = "/MonoDevelop/Ide/Commands/VersionControl">
+        <Command id = "GitHistory.Commands.OpenGitHistory"
+                 defaultHandler = "VS4Mac.GitHistory.Commands.OpenGitHistoryCommand"
+                 _label = "Show Git History" /> 
+    </Extension>
+    <Extension path = "/MonoDevelop/Ide/ContextMenu/ProjectPad/VersionControl">
+        <SeparatorItem insertafter="MonoDevelop.VersionControl.Commands.SolutionStatus"/>
+        <Condition id="ItemType" value="IFileItem">
+            <CommandItem id = "GitHistory.Commands.OpenGitHistory" />
+        </Condition>
+    </Extension>
+</Addin>
